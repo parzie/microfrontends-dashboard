@@ -32,6 +32,9 @@ importers:
 
   apps/courses:
     dependencies:
+      '@originjs/vite-plugin-federation':
+        specifier: ^1.4.1
+        version: 1.4.1
       react:
         specifier: ^19.2.0
         version: 19.2.3
@@ -78,6 +81,9 @@ importers:
 
   apps/profile:
     dependencies:
+      '@originjs/vite-plugin-federation':
+        specifier: ^1.4.1
+        version: 1.4.1
       react:
         specifier: ^19.2.0
         version: 19.2.3
@@ -124,6 +130,9 @@ importers:
 
   apps/shell:
     dependencies:
+      '@originjs/vite-plugin-federation':
+        specifier: ^1.4.1
+        version: 1.4.1
       react:
         specifier: ^19.2.0
         version: 19.2.3
@@ -170,6 +179,9 @@ importers:
 
   packages/ui:
     dependencies:
+      '@originjs/vite-plugin-federation':
+        specifier: ^1.4.1
+        version: 1.4.1
       react:
         specifier: ^19.2.3
         version: 19.2.3
@@ -179,6 +191,9 @@ importers:
 
   packages/utils:
     dependencies:
+      '@originjs/vite-plugin-federation':
+        specifier: ^1.4.1
+        version: 1.4.1
       react:
         specifier: ^19.2.3
         version: 19.2.3
@@ -508,6 +523,10 @@ packages:
 
   '@napi-rs/wasm-runtime@1.1.1':
     resolution: {integrity: sha512-p64ah1M1ld8xjWv3qbvFwHiFVWrq1yFvV4f7w+mzaqiR4IlSgkqhcRdHwsGgomwzBH51sRY4NEowLxnaBjcW/A==}
+
+  '@originjs/vite-plugin-federation@1.4.1':
+    resolution: {integrity: sha512-Uo08jW5pj1t58OUKuZNkmzcfTN2pqeVuAWCCiKf/75/oll4Efq4cHOqSE1FXMlvwZNGDziNdDyBbQ5IANem3CQ==}
+    engines: {node: '>=14.0.0', pnpm: '>=7.0.1'}
 
   '@oxc-project/runtime@0.97.0':
     resolution: {integrity: sha512-yH0zw7z+jEws4dZ4IUKoix5Lh3yhqIJWF9Dc8PWvhpo7U7O+lJrv7ZZL4BeRO0la8LBQFwcCewtLBnVV7hPe/w==}
@@ -1097,6 +1116,9 @@ packages:
     resolution: {integrity: sha512-MMdARuVEQziNTeJD8DgMqmhwR11BRQ/cBP+pLtYdSTnf3MIO8fFeiINEbX36ZdNlfU/7A9f3gUw49B3oQsvwBA==}
     engines: {node: '>=4.0'}
 
+  estree-walker@3.0.3:
+    resolution: {integrity: sha512-7RUKfXgSMMkzt6ZuXmqapOurLGPPfgj6l9uRZ7lRGolvk0y2yocc35LdcxKC5PQZdn2DMqioAQ2NoWcrTKmm6g==}
+
   esutils@2.0.3:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
     engines: {node: '>=0.10.0'}
@@ -1472,6 +1494,10 @@ packages:
 
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
+
+  magic-string@0.27.0:
+    resolution: {integrity: sha512-8UnnX2PeRAPZuN12svgR9j7M1uWMovg/CEnIwIG0LFkXSJJe4PdfUGiTGl8V9bsBHFUtfVINcSyYxd7q+kx9fA==}
+    engines: {node: '>=12'}
 
   math-intrinsics@1.1.0:
     resolution: {integrity: sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==}
@@ -2202,6 +2228,11 @@ snapshots:
       '@tybys/wasm-util': 0.10.1
     optional: true
 
+  '@originjs/vite-plugin-federation@1.4.1':
+    dependencies:
+      estree-walker: 3.0.3
+      magic-string: 0.27.0
+
   '@oxc-project/runtime@0.97.0': {}
 
   '@oxc-project/types@0.97.0': {}
@@ -2922,6 +2953,10 @@ snapshots:
 
   estraverse@5.3.0: {}
 
+  estree-walker@3.0.3:
+    dependencies:
+      '@types/estree': 1.0.8
+
   esutils@2.0.3: {}
 
   fast-deep-equal@3.1.3: {}
@@ -3271,6 +3306,10 @@ snapshots:
   lru-cache@5.1.1:
     dependencies:
       yallist: 3.1.1
+
+  magic-string@0.27.0:
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.5.5
 
   math-intrinsics@1.1.0: {}
 
