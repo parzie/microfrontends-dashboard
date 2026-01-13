@@ -1,18 +1,40 @@
 {
-  "name": "utils",
+  "name": "@mfe/utils",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Shared utilities and contract types for microfrontend applications",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "microfrontend",
+    "module-federation",
+    "contract"
+  ],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.28.0",
-  "dependencies": {
-    "@originjs/vite-plugin-federation": "^1.4.1",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3"
+  "peerDependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.6",
+    "@types/react-dom": "^19.0.3",
+    "typescript": "~5.9.3"
   }
 }

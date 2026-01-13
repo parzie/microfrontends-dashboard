@@ -15,7 +15,7 @@ export default defineConfig({
       name: 'courses',
       filename: 'remoteEntry.js',
       exposes: {
-        './CoursesApp': './src/app/CoursesApp.tsx',
+        './CoursesApp': './src/app/CoursesAppWrapper.tsx',
       },
       shared: ['react', 'react-dom'],
     }),
