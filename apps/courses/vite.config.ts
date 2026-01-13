@@ -1,7 +1,27 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import federation from '@originjs/vite-plugin-federation';
 
-// https://vite.dev/config/
+console.log('FEDERATION PLUGIN LOADED', federation);
+
+
 export default defineConfig({
-  plugins: [react()],
-})
+  server: {
+    port: 5174,
+  },
+  plugins: [
+    react(),
+    federation({
+      name: 'courses',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './CoursesApp': './src/app/CoursesApp.tsx',
+      },
+      shared: ['react', 'react-dom'],
+    }),
+
+  ],
+  build: {
+    target: 'esnext',
+  }
+});
