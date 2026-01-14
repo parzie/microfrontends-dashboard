@@ -32,6 +32,9 @@ importers:
 
   apps/courses:
     dependencies:
+      '@mfe/utils':
+        specifier: workspace:*
+        version: link:../../packages/utils
       '@originjs/vite-plugin-federation':
         specifier: ^1.4.1
         version: 1.4.1
@@ -200,6 +203,10 @@ importers:
       react-dom:
         specifier: ^19.2.3
         version: 19.2.3(react@19.2.3)
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.5
+        version: 19.2.8
 
 packages:
 

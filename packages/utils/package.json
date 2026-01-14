@@ -1,8 +1,9 @@
 {
-  "name": "utils",
+  "name": "@mfe/utils",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Shared utilities for microfrontends",
+  "main": "index.ts",
+  "types": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,5 +15,8 @@
     "@originjs/vite-plugin-federation": "^1.4.1",
     "react": "^19.2.3",
     "react-dom": "^19.2.3"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.5"
   }
 }

@@ -16,6 +16,12 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
+    /* Path mapping for workspace packages */
+    "baseUrl": ".",
+    "paths": {
+      "@mfe/*": ["../../packages/*"]
+    },
+
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
