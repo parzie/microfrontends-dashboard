@@ -45,16 +45,26 @@ const microfrontendProps: MicrofrontendProps = {
 
 export default function App() {
   return (
-    <div>
-      <h1>Shell App</h1>
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 text-white">
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        <h1 className="text-4xl font-bold mb-12 text-center">Shell App</h1>
 
-      <Suspense fallback={<div>Loading Courses...</div>}>
-        <CoursesAppModule {...microfrontendProps} />
-      </Suspense>
+        <div className="space-y-8">
+          <div className="bg-slate-700 rounded-lg p-6 shadow-lg">
+            <h2 className="text-2xl font-semibold mb-4 text-blue-300">Courses Microfrontend</h2>
+            <Suspense fallback={<div className="text-center py-8 text-slate-300">Loading Courses...</div>}>
+              <CoursesAppModule {...microfrontendProps} />
+            </Suspense>
+          </div>
 
-      <Suspense fallback={<div>Loading Profile...</div>}>
-        <ProfileAppModule />
-      </Suspense>
+          <div className="bg-slate-700 rounded-lg p-6 shadow-lg">
+            <h2 className="text-2xl font-semibold mb-4 text-purple-300">Profile Microfrontend</h2>
+            <Suspense fallback={<div className="text-center py-8 text-slate-300">Loading Profile...</div>}>
+              <ProfileAppModule />
+            </Suspense>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
