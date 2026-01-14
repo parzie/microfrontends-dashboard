@@ -1,5 +1,4 @@
 import type { MicrofrontendComponent } from '@mfe/utils';
-import type { ComponentType } from 'react';
 
 /**
  * Type declarations for federated remote modules
@@ -11,8 +10,8 @@ declare module 'courses/CoursesApp' {
   export default CoursesApp;
 }
 
-// Legacy microfrontend (profile - does not implement contract yet)
+// Contract-compliant microfrontend (profile)
 declare module 'profile/ProfileApp' {
-  const ProfileApp: ComponentType;
+  const ProfileApp: MicrofrontendComponent;
   export default ProfileApp;
 }

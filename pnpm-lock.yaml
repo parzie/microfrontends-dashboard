@@ -90,6 +90,9 @@ importers:
 
   apps/profile:
     dependencies:
+      '@mfe/utils':
+        specifier: workspace:*
+        version: link:../../packages/utils
       '@originjs/vite-plugin-federation':
         specifier: ^1.4.1
         version: 1.4.1

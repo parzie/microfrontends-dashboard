@@ -60,7 +60,7 @@ export default function App() {
           <div className="bg-slate-700 rounded-lg p-6 shadow-lg">
             <h2 className="text-2xl font-semibold mb-4 text-purple-300">Profile Microfrontend</h2>
             <Suspense fallback={<div className="text-center py-8 text-slate-300">Loading Profile...</div>}>
-              <ProfileAppModule />
+              <ProfileAppModule {...microfrontendProps} />
             </Suspense>
           </div>
         </div>
