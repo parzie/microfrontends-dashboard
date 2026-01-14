@@ -1,5 +1,6 @@
 import { Suspense, lazy, type ComponentType } from 'react';
 import type { MicrofrontendProps } from '@mfe/utils';
+import { Card } from '@mfe/ui';
 
 type LazyComponent = ComponentType<any>;
 
@@ -13,19 +14,17 @@ interface DashboardPageProps {
 export default function DashboardPage({ microfrontendProps }: DashboardPageProps) {
   return (
     <>
-      <div className="bg-slate-700 rounded-lg p-6 shadow-lg">
-        <h2 className="text-2xl font-semibold mb-4 text-blue-300">Courses Microfrontend</h2>
+      <Card title="Courses Microfrontend" subtitle="Browse and explore available courses">
         <Suspense fallback={<div className="text-center py-8 text-slate-300">Loading Courses...</div>}>
           <CoursesAppModule {...microfrontendProps} />
         </Suspense>
-      </div>
+      </Card>
 
-      <div className="bg-slate-700 rounded-lg p-6 shadow-lg">
-        <h2 className="text-2xl font-semibold mb-4 text-purple-300">Profile Microfrontend</h2>
+      <Card title="Profile Microfrontend" subtitle="View and manage your profile settings">
         <Suspense fallback={<div className="text-center py-8 text-slate-300">Loading Profile...</div>}>
           <ProfileAppModule {...microfrontendProps} />
         </Suspense>
-      </div>
+      </Card>
     </>
   );
 }

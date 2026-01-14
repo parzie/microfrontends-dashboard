@@ -1,5 +1,3 @@
-import type { MicrofrontendProps } from '@mfe/utils';
-
 // Mock user data - in a real app, this would come from auth context
 export const mockUser = {
   id: '1',

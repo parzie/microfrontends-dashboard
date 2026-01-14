@@ -1,6 +1,7 @@
 import { lazy, type ComponentType } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import type { MicrofrontendProps } from '@mfe/utils';
+import { BackButton } from '@mfe/ui';
 import { mockRouter, mockUser, handleError } from '../config/microfrontend';
 
 type LazyComponent = ComponentType<any>;
@@ -25,12 +26,9 @@ export default function ProfilePage() {
   
   return (
     <div className="max-w-2xl mx-auto">
-      <button
-        onClick={() => window.history.back()}
-        className="mb-4 px-3 py-1 bg-slate-600 hover:bg-slate-700 text-white rounded transition-colors text-sm"
-      >
-        ← Back
-      </button>
+      <div className="mb-4">
+        <BackButton />
+      </div>
       {section === 'edit' ? (
         <div className="bg-purple-50 border border-purple-200 rounded-lg p-6">
           <h3 className="text-2xl font-bold text-purple-900 mb-2">✏️ Edit Profile</h3>

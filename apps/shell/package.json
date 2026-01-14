@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mfe/utils": "workspace:*",
+    "@mfe/ui": "workspace:*",
     "@originjs/vite-plugin-federation": "^1.4.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",

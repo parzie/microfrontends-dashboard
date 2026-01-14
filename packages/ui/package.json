@@ -1,18 +1,47 @@
 {
-  "name": "ui",
+  "name": "@mfe/ui",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "Shared UI component library for MFE dashboard",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./Button": {
+      "import": "./dist/Button.js",
+      "types": "./dist/Button.d.ts"
+    },
+    "./Card": {
+      "import": "./dist/Card.js",
+      "types": "./dist/Card.d.ts"
+    },
+    "./BackButton": {
+      "import": "./dist/BackButton.js",
+      "types": "./dist/BackButton.d.ts"
+    }
   },
-  "keywords": [],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "keywords": [
+    "microfrontend",
+    "component-library",
+    "ui"
+  ],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.28.0",
   "dependencies": {
-    "@originjs/vite-plugin-federation": "^1.4.1",
     "react": "^19.2.3",
     "react-dom": "^19.2.3"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.1",
+    "typescript": "^5.6.3"
   }
 }

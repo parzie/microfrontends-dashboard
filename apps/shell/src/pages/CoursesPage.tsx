@@ -1,6 +1,7 @@
 import { lazy, type ComponentType } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import type { MicrofrontendProps } from '@mfe/utils';
+import { BackButton } from '@mfe/ui';
 import { mockRouter, mockUser, handleError } from '../config/microfrontend';
 
 type LazyComponent = ComponentType<any>;
@@ -25,12 +26,9 @@ export default function CoursesPage() {
   
   return (
     <div className="max-w-2xl mx-auto">
-      <button
-        onClick={() => window.history.back()}
-        className="mb-4 px-3 py-1 bg-slate-600 hover:bg-slate-700 text-white rounded transition-colors text-sm"
-      >
-        ← Back
-      </button>
+      <div className="mb-4">
+        <BackButton />
+      </div>
       {courseId && courseId !== 'courses' ? (
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
           <h3 className="text-2xl font-bold text-blue-900 mb-2">📚 {courseId.charAt(0).toUpperCase() + courseId.slice(1)} Course</h3>
