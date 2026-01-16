@@ -1,4 +1,5 @@
 import type { MicrofrontendComponent } from '@mfe/utils';
+import { Button } from '@mfe/ui';
 
 const ProfileApp: MicrofrontendComponent = (props) => {
   const { user, router, onNavigate, onError } = props;
@@ -28,43 +29,50 @@ const ProfileApp: MicrofrontendComponent = (props) => {
   };
 
   return (
-    <div className="space-y-4">
+    <div className="w-full">
       {user ? (
         <>
-          <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 text-purple-900">
-            <h3 className="text-lg font-semibold mb-2">👤 User Profile</h3>
-            <div className="space-y-2 text-sm">
-              <p><span className="font-semibold">Name:</span> {user.name}</p>
-              <p><span className="font-semibold">Email:</span> {user.email}</p>
-              <p><span className="font-semibold">ID:</span> {user.id}</p>
+          {/* Profile Header */}
+          <div className="mb-8">
+            <h2 className="text-4xl font-bold mb-2">Your Profile</h2>
+            <p className="text-gray-400">Manage your account settings and preferences</p>
+          </div>
+
+          {/* Profile Card */}
+          <div className="p-8 rounded-2xl bg-gradient-to-br from-gray-900 to-black border border-gray-800 mb-6">
+            <div className="flex items-start gap-4 mb-6">
+              <div className="h-16 w-16 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex-shrink-0" />
+              <div>
+                <h3 className="text-2xl font-bold">{user.name}</h3>
+                <p className="text-gray-400">{user.email}</p>
+                <p className="text-xs text-gray-500 mt-2">ID: {user.id}</p>
+              </div>
             </div>
           </div>
 
-          <div className="flex gap-2">
-            <button
-              onClick={handleEditProfile}
-              className="flex-1 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors font-medium"
-            >
-              ✏️ Edit Profile
-            </button>
-            <button
-              onClick={handleViewSettings}
-              className="flex-1 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors font-medium"
-            >
-              ⚙️ Settings
-            </button>
+          {/* Action Buttons */}
+          <div className="flex gap-3">
+            <Button onClick={handleEditProfile} variant="primary" size="md">
+              Edit Profile
+            </Button>
+            <Button onClick={handleViewSettings} variant="primary" size="md">
+              Settings
+            </Button>
           </div>
         </>
       ) : (
-        <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 text-yellow-900">
-          <p className="font-semibold">⚠️ User not authenticated</p>
-          <p className="text-sm">Please log in to view your profile</p>
+        <div className="text-center py-12">
+          <h3 className="text-2xl font-bold mb-2">Authentication Required</h3>
+          <p className="text-gray-400">Please log in to view your profile</p>
         </div>
       )}
 
-      {router?.location?.pathname && (
-        <div className="bg-slate-100 border border-slate-300 rounded-lg p-3 text-slate-700 text-sm">
-          <p className="font-mono">Current route: <span className="font-bold">{router.location.pathname}</span></p>
+      {/* Route Info */}
+      {router?.location?.pathname !== '/' && (
+        <div className="mt-8 p-4 rounded-lg bg-gray-900/50 border border-gray-800 text-center">
+          <p className="text-xs text-gray-500 font-mono">
+            Current route: <span className="text-purple-400">{router?.location?.pathname}</span>
+          </p>
         </div>
       )}
     </div>

@@ -15,13 +15,13 @@ export default function DashboardPage({ microfrontendProps }: DashboardPageProps
   return (
     <>
       <Card title="Courses Microfrontend" subtitle="Browse and explore available courses">
-        <Suspense fallback={<div className="text-center py-8 text-slate-300">Loading Courses...</div>}>
+        <Suspense fallback={<div className="text-center py-12 text-gray-400">Loading Courses...</div>}>
           <CoursesAppModule {...microfrontendProps} />
         </Suspense>
       </Card>
 
       <Card title="Profile Microfrontend" subtitle="View and manage your profile settings">
-        <Suspense fallback={<div className="text-center py-8 text-slate-300">Loading Profile...</div>}>
+        <Suspense fallback={<div className="text-center py-12 text-gray-400">Loading Profile...</div>}>
           <ProfileAppModule {...microfrontendProps} />
         </Suspense>
       </Card>

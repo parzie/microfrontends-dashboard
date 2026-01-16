@@ -25,19 +25,29 @@ export default function ProfilePage() {
   };
   
   return (
-    <div className="max-w-2xl mx-auto">
-      <div className="mb-4">
+    <div className="w-full">
+      <div className="mb-8">
         <BackButton />
       </div>
       {section === 'edit' ? (
-        <div className="bg-purple-50 border border-purple-200 rounded-lg p-6">
-          <h3 className="text-2xl font-bold text-purple-900 mb-2">✏️ Edit Profile</h3>
-          <p className="text-purple-700">Profile editing form would be displayed here.</p>
+        <div className="max-w-2xl">
+          <div className="mb-8">
+            <h2 className="text-4xl font-bold mb-2">Edit Profile</h2>
+            <p className="text-gray-400">Update your personal information</p>
+          </div>
+          <div className="p-8 rounded-2xl bg-gradient-to-br from-gray-900 to-black border border-gray-800">
+            <p className="text-gray-400">Profile editing form would be displayed here.</p>
+          </div>
         </div>
       ) : section === 'settings' ? (
-        <div className="bg-purple-50 border border-purple-200 rounded-lg p-6">
-          <h3 className="text-2xl font-bold text-purple-900 mb-2">⚙️ Settings</h3>
-          <p className="text-purple-700">User settings would be displayed here.</p>
+        <div className="max-w-2xl">
+          <div className="mb-8">
+            <h2 className="text-4xl font-bold mb-2">Settings</h2>
+            <p className="text-gray-400">Manage your account preferences</p>
+          </div>
+          <div className="p-8 rounded-2xl bg-gradient-to-br from-gray-900 to-black border border-gray-800">
+            <p className="text-gray-400">User settings would be displayed here.</p>
+          </div>
         </div>
       ) : (
         <ProfileAppModule {...microfrontendProps} />

@@ -25,14 +25,19 @@ export default function CoursesPage() {
   };
   
   return (
-    <div className="max-w-2xl mx-auto">
-      <div className="mb-4">
+    <div className="w-full">
+      <div className="mb-8">
         <BackButton />
       </div>
       {courseId && courseId !== 'courses' ? (
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-          <h3 className="text-2xl font-bold text-blue-900 mb-2">📚 {courseId.charAt(0).toUpperCase() + courseId.slice(1)} Course</h3>
-          <p className="text-blue-700">Course details and content would be displayed here.</p>
+        <div className="max-w-2xl">
+          <div className="mb-8">
+            <h2 className="text-4xl font-bold mb-2">{courseId.charAt(0).toUpperCase() + courseId.slice(1)} Course</h2>
+            <p className="text-gray-400">Deep dive into the fundamentals and advanced concepts</p>
+          </div>
+          <div className="p-8 rounded-2xl bg-gradient-to-br from-gray-900 to-black border border-gray-800">
+            <p className="text-gray-400">Course details and content would be displayed here.</p>
+          </div>
         </div>
       ) : (
         <CoursesAppModule {...microfrontendProps} />

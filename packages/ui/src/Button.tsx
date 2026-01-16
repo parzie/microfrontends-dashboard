@@ -8,7 +8,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 
 const variantClasses = {
   primary: 'bg-blue-600 hover:bg-blue-700 text-white',
-  secondary: 'bg-slate-600 hover:bg-slate-700 text-white',
+  secondary: 'bg-gray-700 hover:bg-gray-600 text-white',
   danger: 'bg-red-600 hover:bg-red-700 text-white',
   success: 'bg-green-600 hover:bg-green-700 text-white'
 };
@@ -21,7 +21,7 @@ const sizeClasses = {
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ variant = 'primary', size = 'md', className = '', ...props }, ref) => {
-    const baseClasses = 'rounded transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
+    const baseClasses = 'rounded font-semibold transition-all duration-200 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed active:scale-95';
     const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
     
     return <button ref={ref} className={classes} {...props} />;

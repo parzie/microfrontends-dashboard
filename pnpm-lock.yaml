@@ -32,6 +32,9 @@ importers:
 
   apps/courses:
     dependencies:
+      '@mfe/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       '@mfe/utils':
         specifier: workspace:*
         version: link:../../packages/utils
@@ -93,6 +96,9 @@ importers:
 
   apps/profile:
     dependencies:
+      '@mfe/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       '@mfe/utils':
         specifier: workspace:*
         version: link:../../packages/utils
